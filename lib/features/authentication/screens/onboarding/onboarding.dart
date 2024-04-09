@@ -13,6 +13,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // OnBoarding Controller to handle Login
     final controller = Get.put(OnBoardingController());
 
     return Scaffold(
