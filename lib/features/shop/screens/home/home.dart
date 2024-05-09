@@ -3,6 +3,8 @@ import 'package:fl_ecommerce/common/widgets/custom_shapes/containers/search_cont
 import 'package:fl_ecommerce/common/widgets/texts/section_heading.dart';
 import 'package:fl_ecommerce/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:fl_ecommerce/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:fl_ecommerce/features/shop/screens/home/widgets/promo_slider.dart';
+import 'package:fl_ecommerce/utils/constants/image_string.dart';
 import 'package:fl_ecommerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -48,6 +50,19 @@ class HomeScreen extends StatelessWidget {
                         THomeCategories()
                       ],
                     ))
+              ],
+            ),
+          ),
+
+          // Body
+          Padding(
+            padding: EdgeInsets.all(TSizes.defaultSpace),
+            child: TPromoSlider(
+              banners: [
+                TImages.promoBanner1,
+                TImages.promoBanner2,
+                TImages.promoBanner3,
+                TImages.promoBanner4,
               ],
             ),
           )
