@@ -3,8 +3,10 @@ import 'package:fl_ecommerce/common/widgets/icons/t_circular_icon.dart';
 import 'package:fl_ecommerce/common/widgets/images/t_rounded_container.dart';
 import 'package:fl_ecommerce/common/widgets/images/t_rounded_image.dart';
 import 'package:fl_ecommerce/common/widgets/texts/product_title_text.dart';
+import 'package:fl_ecommerce/common/widgets/texts/t_brand_title_with_verified_icon.dart';
 import 'package:fl_ecommerce/common/widgets/texts/t_product_price_text.dart';
 import 'package:fl_ecommerce/utils/constants/colors.dart';
+import 'package:fl_ecommerce/utils/constants/enums.dart';
 import 'package:fl_ecommerce/utils/constants/image_string.dart';
 import 'package:fl_ecommerce/utils/constants/sizes.dart';
 import 'package:fl_ecommerce/utils/helpers/helper_funtions.dart';
@@ -59,7 +61,7 @@ class TProductCardVertical extends StatelessWidget {
                     ),
                   ),
 
-                  // Favourite Icon Button
+                  // Favaurite Icon Button
                   const Positioned(
                       top: 0,
                       right: 0,
@@ -73,63 +75,50 @@ class TProductCardVertical extends StatelessWidget {
             ),
 
             // Details
-            Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TProductTitleText(
+                  TProductTitleText(
                     title: 'Green Nike Air Shoes',
                     smallSize: true,
                   ),
-                  const SizedBox(height: TSizes.spaceBtwItems / 2),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(
-                        width: TSizes.xs,
-                      ),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: TColors.primary,
-                        size: TSizes.iconXs,
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Price
-                      const TProductPriceText(
-                        price: '35.0',
-                      ),
-                      Container(
-                        decoration: const BoxDecoration(
-                            color: TColors.dark,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(TSizes.cardRadiusMd),
-                                bottomRight: Radius.circular(
-                                    TSizes.productImageRadius))),
-                        child: const SizedBox(
-                          width: TSizes.iconLg * 1.2,
-                          height: TSizes.iconLg * 1.2,
-                          child: Center(
-                            child: Icon(
-                              Iconsax.add,
-                              color: TColors.white,
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  )
+                  SizedBox(height: TSizes.spaceBtwItems / 2),
+                  TBrandTitleWithVerifiedIcon(title: 'Nike'),
                 ],
               ),
+            ),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Price
+                const Padding(
+                  padding: EdgeInsets.only(left: TSizes.sm),
+                  child: TProductPriceText(
+                    price: '35.0',
+                  ),
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                      color: TColors.dark,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(TSizes.cardRadiusMd),
+                          bottomRight:
+                              Radius.circular(TSizes.productImageRadius))),
+                  child: const SizedBox(
+                    width: TSizes.iconLg * 1.2,
+                    height: TSizes.iconLg * 1.2,
+                    child: Center(
+                      child: Icon(
+                        Iconsax.add,
+                        color: TColors.white,
+                      ),
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),
