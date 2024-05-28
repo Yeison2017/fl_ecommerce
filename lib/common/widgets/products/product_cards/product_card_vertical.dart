@@ -19,6 +19,7 @@ class TProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
 
+    // Container with side paddings, color, edges, radius and shadow
     return GestureDetector(
       onTap: () {},
       child: Container(
@@ -80,7 +81,7 @@ class TProductCardVertical extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TProductTitleText(
-                    title: 'Green Nike Air Shoes',
+                    title: 'Green Nike',
                     smallSize: true,
                   ),
                   SizedBox(height: TSizes.spaceBtwItems / 2),
@@ -89,6 +90,8 @@ class TProductCardVertical extends StatelessWidget {
               ),
             ),
             const Spacer(),
+
+            // Price Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

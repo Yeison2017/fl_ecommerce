@@ -1,6 +1,5 @@
 import 'package:fl_ecommerce/common/widgets/appbar/appbar.dart';
 import 'package:fl_ecommerce/common/widgets/appbar/tabbar.dart';
-import 'package:fl_ecommerce/common/widgets/brands/brand_card.dart';
 import 'package:fl_ecommerce/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:fl_ecommerce/common/widgets/layouts/grid_layout.dart';
 import 'package:fl_ecommerce/common/widgets/products/cart/cart_menu_icon.dart';
@@ -8,7 +7,6 @@ import 'package:fl_ecommerce/common/widgets/texts/section_heading.dart';
 import 'package:fl_ecommerce/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:fl_ecommerce/features/shop/screens/store/widgets/t_brand_card.dart';
 import 'package:fl_ecommerce/utils/constants/colors.dart';
-import 'package:fl_ecommerce/utils/constants/image_string.dart';
 import 'package:fl_ecommerce/utils/constants/sizes.dart';
 import 'package:fl_ecommerce/utils/helpers/helper_funtions.dart';
 import 'package:flutter/material.dart';
