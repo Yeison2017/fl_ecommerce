@@ -6,7 +6,6 @@ import 'package:fl_ecommerce/common/widgets/texts/product_title_text.dart';
 import 'package:fl_ecommerce/common/widgets/texts/t_brand_title_with_verified_icon.dart';
 import 'package:fl_ecommerce/common/widgets/texts/t_product_price_text.dart';
 import 'package:fl_ecommerce/utils/constants/colors.dart';
-import 'package:fl_ecommerce/utils/constants/enums.dart';
 import 'package:fl_ecommerce/utils/constants/image_string.dart';
 import 'package:fl_ecommerce/utils/constants/sizes.dart';
 import 'package:fl_ecommerce/utils/helpers/helper_funtions.dart';
