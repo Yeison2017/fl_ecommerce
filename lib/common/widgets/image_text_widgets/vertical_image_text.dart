@@ -6,15 +6,15 @@ import 'package:flutter/material.dart';
 class TVerticalImageText extends StatelessWidget {
   const TVerticalImageText({
     super.key,
+    this.onTap,
     required this.image,
     required this.title,
     this.textColor = TColors.white,
-    this.backgroundColor = TColors.white,
-    this.onTap,
+    this.backgroundColor,
   });
 
-  final String image, title;
   final Color textColor;
+  final String image, title;
   final Color? backgroundColor;
   final void Function()? onTap;
 
