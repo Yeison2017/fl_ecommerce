@@ -14,11 +14,13 @@ class TCircularImage extends StatelessWidget {
     this.fit = BoxFit.cover,
     this.padding = TSizes.sm,
     this.isNetworkImage = false,
+    this.isCircular = false,
   });
 
   final BoxFit? fit;
   final String image;
   final bool isNetworkImage;
+  final bool isCircular;
   final Color? overlayColor;
   final Color? backgroundColor;
   final double width, height, padding;
@@ -28,21 +30,45 @@ class TCircularImage extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
 
     return Container(
-      width: width,
-      height: height,
-      padding: EdgeInsets.all(padding),
-      decoration: BoxDecoration(
-          // If image background color is null then switch it to light and dark mode color design.
-          color: backgroundColor ?? (dark ? TColors.black : TColors.white),
-          borderRadius: BorderRadius.circular(100)),
-      child: Center(
-        child: Image(
-            fit: fit,
-            image: isNetworkImage
-                ? NetworkImage(image)
-                : AssetImage(image) as ImageProvider,
-            color: overlayColor),
-      ),
-    );
+        width: width,
+        height: height,
+        padding: EdgeInsets.all(padding),
+        decoration: BoxDecoration(
+            // If image background color is null then switch it to light and dark mode color design.
+            color: backgroundColor ?? (dark ? TColors.black : TColors.white),
+            // shape: isCircular ? BoxShape.circle : BoxShape.rectangle
+            borderRadius: BorderRadius.circular(100)),
+        // child: Center(
+        // child: Image(
+        //     fit: fit,
+        //     image: isNetworkImage
+        //         ? NetworkImage(image)
+        //         : AssetImage(image) as ImageProvider,
+        //     color: overlayColor),
+        // ),
+        child: isCircular
+            ? ClipOval(
+                child: Center(
+                  child: Image(
+                      fit: fit,
+                      // width: width - padding * 2,
+                      // height: height - padding * 2,
+                      image: isNetworkImage
+                          ? NetworkImage(image)
+                          : AssetImage(image) as ImageProvider,
+                      color: overlayColor),
+                ),
+              )
+            : Center(
+                child: Image(
+                  fit: fit,
+                  // width: width - padding * 2,
+                  // height: height - padding * 2,
+                  image: isNetworkImage
+                      ? NetworkImage(image)
+                      : AssetImage(image) as ImageProvider,
+                  color: overlayColor,
+                ),
+              ));
   }
 }

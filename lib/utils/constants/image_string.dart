@@ -55,6 +55,9 @@ class TImages {
   static const String promoBanner3 = 'assets/images/banners/promo-banner-3.png';
   static const String promoBanner4 = 'assets/images/banners/promo-banner-4.png';
 
+  // Profile
+  static const String user = 'assets/images/user/user.png';
+
   // Products
   static const String productImage1 =
       'assets/images/products/acer_laptop_1.png';
