@@ -5,11 +5,13 @@ import 'package:fl_ecommerce/common/widgets/images/t_rounded_image.dart';
 import 'package:fl_ecommerce/common/widgets/texts/product_title_text.dart';
 import 'package:fl_ecommerce/common/widgets/texts/t_brand_title_with_verified_icon.dart';
 import 'package:fl_ecommerce/common/widgets/texts/t_product_price_text.dart';
+import 'package:fl_ecommerce/features/shop/screens/product_details/product_detail.dart';
 import 'package:fl_ecommerce/utils/constants/colors.dart';
 import 'package:fl_ecommerce/utils/constants/image_string.dart';
 import 'package:fl_ecommerce/utils/constants/sizes.dart';
 import 'package:fl_ecommerce/utils/helpers/helper_funtions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TProductCardVertical extends StatelessWidget {
@@ -21,7 +23,7 @@ class TProductCardVertical extends StatelessWidget {
 
     // Container with side paddings, color, edges, radius and shadow
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailScreen()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -44,6 +46,7 @@ class TProductCardVertical extends StatelessWidget {
                     applyImageRadius: true,
                   ),
 
+                  // Sale Tag
                   Positioned(
                     top: 12,
                     child: TRoundedContainer(
@@ -61,7 +64,7 @@ class TProductCardVertical extends StatelessWidget {
                     ),
                   ),
 
-                  // Favaurite Icon Button
+                  // Favourite Icon Button
                   const Positioned(
                       top: 0,
                       right: 0,
